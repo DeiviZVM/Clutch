@@ -17,9 +17,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            ClutchTheme (dynamicColor = false) {
+            ClutchTheme(dynamicColor = false) {
                 // A surface container using the 'background' color from the theme
-                }
             }
         }
     }
