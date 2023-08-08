@@ -7,6 +7,8 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -45,7 +47,7 @@ fun HomeSection(
 @Composable
 fun HomeScreen(
     agentListViewModel: AgentListViewModel = koinViewModel(),
-    //mapListViewModel: MapListViewModel = koinViewModel()
+    mapListViewModel: MapListViewModel = koinViewModel()
 ) {
     Column(
         modifier = Modifier
@@ -56,12 +58,9 @@ fun HomeScreen(
         HomeSection(title = R.string.title_agents) {
             AgentListScreen(agentListViewModel)
         }
-        /*
         HomeSection(title = R.string.title_maps) {
             MapListScreen(mapListViewModel)
         }
-
-         */
         Spacer(Modifier.height(16.dp))
     }
 }

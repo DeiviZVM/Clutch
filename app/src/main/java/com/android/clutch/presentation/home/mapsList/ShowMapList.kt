@@ -3,6 +3,7 @@ package com.android.clutch.presentation.home.mapsList
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -50,15 +51,14 @@ fun ShowMapList(
                 placeholder = painterResource(id = R.drawable.map_ascend),
                 error = painterResource(id = R.drawable.map_ascend),
                 modifier = Modifier
-                    .size(88.dp)
-                    .clip(CircleShape),
+                    .size(80.dp)
 
                 )
             Text(
                 text = map.name,
                 style = MaterialTheme.typography.titleSmall,
                 modifier = Modifier
-                    .paddingFromBaseline(top = 24.dp, bottom = 8.dp)
+                    .padding(horizontal = 16.dp)
             )
         }
     }
