@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Clutch</string>
+    <string name="login">Login</string>
+    <string name="search">Buscar</string>
+    <string name="home">Home</string>
+    <string name="notices">Noticias</string>
+    <string name="title_agents">Agentes</string>
+    <string name="title_maps">Mapas</string>
+    <string name="placeholder_search">Buscar elemento de Valorant</string>
+    <string name="agent_gekko">Gekko</string>
+    <string name="agent_breach">Breach</string>
+    <string name="agent_brim">Brimstone</string>
+    <string name="agent_chamber">Chamber</string>
+    <string name="agent_kayo">Kay/o</string>
+    <string name="agent_killjoy">Killjoy</string>
+    <string name="agent_omen">Omen</string>
+    <string name="agent_raze">Raze</string>
+    <string name="agent_sky">Sky</string>
+    <string name="agent_viper">Viper</string>
+    <string name="map_ascent">Ascent</string>
+    <string name="map_bind">Bind</string>
+    <string name="map_breeze">Breeze</string>
+    <string name="map_fracture">Fracture</string>
+    <string name="map_haven">Haven</string>
+    <string name="map_icebox">Icebox</string>
+    <string name="map_lotus">Lotus</string>
+    <string name="map_pearl">Pearl</string>
+    <string name="map_split">Split</string>
 </resources>

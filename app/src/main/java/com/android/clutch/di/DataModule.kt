@@ -66,9 +66,9 @@ val dataModule = module {
 
 private fun getValorantApi(retrofit: Retrofit) = retrofit.create(ValorantApi::class.java)
 
-private fun getDataBase(context: Context) : AgentDatabase = Room.databaseBuilder(
+private fun getDataBase(context: Context): AgentDatabase = Room.databaseBuilder(
     context,
     AgentDatabase::class.java, "valorant-db"
 ).build()
 
-private fun providesAgentDao(db: AgentDatabase) : AgentDao = db.getAgentDao()
+private fun providesAgentDao(db: AgentDatabase): AgentDao = db.getAgentDao()

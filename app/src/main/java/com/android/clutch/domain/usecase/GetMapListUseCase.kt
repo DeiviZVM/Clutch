@@ -2,8 +2,8 @@ package com.android.clutch.domain.usecase
 
 import com.android.clutch.data.AgentRepository
 
-class GetAgentListUseCase(
+class GetMapListUseCase(
     private val agentRepository: AgentRepository
 ) {
-    suspend fun invoke() = agentRepository.getAgentList()
+    suspend fun invoke() = agentRepository.getMapList()
 }

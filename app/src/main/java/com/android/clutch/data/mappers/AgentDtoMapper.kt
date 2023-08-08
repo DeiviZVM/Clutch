@@ -16,8 +16,8 @@ fun AgentDto.toAgentLocal() = AgentLocal(
     portraitUrl = portraitUrl ?: ""
 )
 
-fun AgentLocal.toHeroModel() = AgentModel(
-    id = id ?: 0,
-    name = name ?: "",
-    portraitUrl = portraitUrl ?: ""
+fun AgentLocal.toAgentModel() = AgentModel(
+    id = id,
+    name = name,
+    portraitUrl = portraitUrl
 )
