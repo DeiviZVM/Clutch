@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.android.clutch.navigation.NavigationGraph
+import com.android.clutch.presentation.home.MainScreen
 import com.android.clutch.presentation.theme.ClutchTheme
 
 class MainActivity : ComponentActivity() {

@@ -21,4 +21,9 @@ sealed class Screen(
         route = "home",
         arguments = emptyList()
     )
+
+    object MainScreen : Screen(
+        route = "main",
+        arguments = emptyList()
+    )
 }

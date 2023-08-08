@@ -3,6 +3,7 @@ package com.android.clutch.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.android.clutch.presentation.home.MainScreen
 
 @Composable
 fun NavigationGraph() {
@@ -13,6 +14,7 @@ fun NavigationGraph() {
         startDestination = Screen.LoginScreen.route ,
     ) {
         addHomeScreen()
+        addMainScreen()
         addLoginScreen(navController)
     }
 }
