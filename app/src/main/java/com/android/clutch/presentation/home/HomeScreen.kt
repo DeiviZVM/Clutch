@@ -3,6 +3,7 @@ package com.android.clutch.presentation.home
 import android.annotation.SuppressLint
 import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
@@ -61,11 +62,10 @@ fun HomeSection(
     }
 }
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun HomeScreen(
     agentListViewModel: AgentListViewModel = koinViewModel(),
-    mapListViewModel: MapListViewModel = koinViewModel()
+    mapListViewModel: MapListViewModel = koinViewModel(),
 ) {
 
     Column(

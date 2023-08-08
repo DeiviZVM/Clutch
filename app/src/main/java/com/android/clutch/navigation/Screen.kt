@@ -17,11 +17,6 @@ sealed class Screen(
         arguments = emptyList()
     )
 
-    object HomeScreen : Screen(
-        route = "home",
-        arguments = emptyList()
-    )
-
     object MainScreen : Screen(
         route = "main",
         arguments = emptyList()

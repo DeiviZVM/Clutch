@@ -1,11 +1,10 @@
 package com.android.clutch.presentation.bottomBar
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.android.clutch.presentation.NoticesScreen
+import com.android.clutch.presentation.home.notices.NoticesScreen
 import com.android.clutch.presentation.home.HomeScreen
 
 @Composable

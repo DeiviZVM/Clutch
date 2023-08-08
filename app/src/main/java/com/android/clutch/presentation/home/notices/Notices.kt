@@ -1,4 +1,4 @@
-package com.android.clutch.presentation
+package com.android.clutch.presentation.home.notices
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

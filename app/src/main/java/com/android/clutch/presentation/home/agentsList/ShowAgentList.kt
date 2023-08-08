@@ -33,6 +33,7 @@ import coil.request.ImageRequest
 import com.android.clutch.AgentTestDataBuilder
 import com.android.clutch.R
 import com.android.clutch.domain.model.AgentModel
+import com.android.clutch.presentation.theme.backgroundColor
 
 @Composable
 fun ShowAgentList(
@@ -56,7 +57,7 @@ fun ShowAgentList(
                 error = painterResource(id = R.drawable.agent_killjoy),
                 modifier = Modifier
                     .size(88.dp)
-                    .clip(CircleShape),
+                    .clip(CircleShape).background(Color.LightGray),
 
                 )
             Text(
