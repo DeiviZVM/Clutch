@@ -16,9 +16,9 @@ sealed class BottomBarScreen(
         icon = Icons.Default.Home
     )
 
-    object Notices: BottomBarScreen(
-        route = "notices",
-        title = "Notices",
+    object Teams: BottomBarScreen(
+        route = "teams",
+        title = "teams",
         icon = Icons.Default.Menu
     )
 }

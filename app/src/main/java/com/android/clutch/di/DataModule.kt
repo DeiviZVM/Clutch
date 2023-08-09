@@ -3,8 +3,8 @@ package com.android.clutch.di
 import android.content.Context
 import androidx.room.Room
 import com.android.clutch.BuildConfig
-import com.android.clutch.data.AgentRepository
-import com.android.clutch.data.AgentRepositoryImpl
+import com.android.clutch.data.ValorantRepository
+import com.android.clutch.data.ValorantRepositoryImpl
 import com.android.clutch.data.local.AgentDao
 import com.android.clutch.data.local.AgentDatabase
 import com.android.clutch.data.local.LocalDataSource
@@ -45,7 +45,7 @@ val dataModule = module {
             .build()
     }
 
-    single<AgentRepository> { AgentRepositoryImpl(get(), get()) }
+    single<ValorantRepository> { ValorantRepositoryImpl(get(), get()) }
 
     single<RemoteDataSource> { RemoteDataSourceImpl(get()) }
 

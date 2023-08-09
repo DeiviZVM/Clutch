@@ -1,9 +1,9 @@
 package com.android.clutch.domain.usecase
 
-import com.android.clutch.data.AgentRepository
+import com.android.clutch.data.ValorantRepository
 
 class GetAgentListUseCase(
-    private val agentRepository: AgentRepository
+    private val valorantRepository: ValorantRepository
 ) {
-    suspend fun invoke() = agentRepository.getAgentList()
+    suspend fun invoke() = valorantRepository.getAgentList()
 }

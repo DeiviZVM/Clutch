@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.android.clutch.presentation.home.notices.NoticesScreen
 import com.android.clutch.presentation.home.HomeScreen
+import com.android.clutch.presentation.home.teams.TeamListScreen
 
 @Composable
 fun BottomNavGraph(navController: NavHostController){
@@ -16,8 +16,8 @@ fun BottomNavGraph(navController: NavHostController){
         composable(route = BottomBarScreen.Home.route) {
             HomeScreen()
         }
-        composable(route = BottomBarScreen.Notices.route) {
-            NoticesScreen()
+        composable(route = BottomBarScreen.Teams.route) {
+            TeamListScreen()
         }
     }
 }

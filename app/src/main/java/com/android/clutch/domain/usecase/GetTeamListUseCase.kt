@@ -2,8 +2,8 @@ package com.android.clutch.domain.usecase
 
 import com.android.clutch.data.ValorantRepository
 
-class GetMapListUseCase(
+class GetTeamListUseCase(
     private val valorantRepository: ValorantRepository
 ) {
-    suspend fun invoke() = valorantRepository.getMapList()
+    suspend fun invoke() = valorantRepository.getTeamList()
 }
