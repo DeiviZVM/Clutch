@@ -23,9 +23,9 @@ class DetailViewModel(
     fun getAgent(id:String) = viewModelScope.launch {
         try {
             val result = withContext(Dispatchers.IO) {
-                getDetailUseCase.invoke(id)
+                //getDetailUseCase.invoke(id)
             }
-            _agent.value = result
+            //_agent.value = result
         } catch (_: Throwable) {
             _errorMessage.value = "Error lunched from ViewModel"
         }

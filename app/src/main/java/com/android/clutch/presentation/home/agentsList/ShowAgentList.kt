@@ -53,6 +53,7 @@ fun ShowAgentList(
 
     Surface(
         shape = MaterialTheme.shapes.small,
+        modifier = Modifier
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,

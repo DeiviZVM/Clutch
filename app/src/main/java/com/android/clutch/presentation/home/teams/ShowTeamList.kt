@@ -1,11 +1,17 @@
 package com.android.clutch.presentation.home.teams
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -42,20 +48,84 @@ fun ShowTeamList(
     }
 
     Surface(
+        border = BorderStroke(2.dp, Color.LightGray),
         shape = MaterialTheme.shapes.small,
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    onClick.invoke()
+                }
         ) {
-
-
-
-            Text(
-                text = team.name,
-                style = MaterialTheme.typography.titleSmall,
+            AsyncImage(
+                model = ImageRequest.Builder(LocalContext.current)
+                    .data(team.imageUrl)
+                    .build(),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                placeholder = painterResource(id = R.drawable.teams),
+                error = painterResource(id = R.drawable.teams),
                 modifier = Modifier
-                    .paddingFromBaseline(top = 24.dp, bottom = 8.dp)
+                    .size(80.dp)
+                    .padding(15.dp)
+
             )
+
+            Column {
+
+                Row {
+
+                    Text(
+                        text = "Acrónimo : ",
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+
+                    Text(
+                        text = team.acronym,
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+                }
+
+                Row {
+
+                    Text(
+                        text = "Nombre : ",
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+
+                    Text(
+                        text = team.name,
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+                }
+
+                Row {
+
+                    Text(
+                        text = "Localización : ",
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+
+                    Text(
+                        text = team.location,
+                        style = MaterialTheme.typography.titleSmall,
+                        modifier = Modifier
+                            .padding()
+                    )
+                }
+            }
         }
     }
 }

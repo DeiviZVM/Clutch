@@ -45,7 +45,8 @@ fun MapListScreen(
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
-        contentPadding = PaddingValues(horizontal = 16.dp),
+        contentPadding = PaddingValues(16.dp,0.dp,16.dp,70.dp),
+
         horizontalArrangement = Arrangement.spacedBy(8.dp),
         verticalArrangement = Arrangement.spacedBy(18.dp),
         modifier = Modifier.fillMaxWidth()

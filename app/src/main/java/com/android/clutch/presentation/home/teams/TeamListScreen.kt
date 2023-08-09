@@ -4,7 +4,13 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.material.MaterialTheme
@@ -22,7 +28,8 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun TeamListScreen(
-    teamListViewModel: TeamListViewModel = koinViewModel()
+    teamListViewModel: TeamListViewModel = koinViewModel(),
+    onItemClick: (Int) -> Unit
 ) {
     val state = teamListViewModel.teamList.observeAsState()
 
@@ -33,18 +40,28 @@ fun TeamListScreen(
         ShowError(error = error ?: "")
     }
 
-    LazyColumn(
-        contentPadding = PaddingValues(horizontal = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)
-    ) {
-        val teamList = state.value
-        items(teamList?.size ?: 0) { i ->
-            val item = teamList?.get(i)
-            item?.let { team ->
-                ShowTeamList(team) {
+        Text(
+            text = "Equipos".uppercase(),
+            style = MaterialTheme.typography.h5,
+            modifier = Modifier
+                .padding(horizontal = 16.dp)
+        )
 
+        LazyColumn(
+            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 70.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            val teamList = state.value
+            items(teamList?.size ?: 0) { i ->
+                val item = teamList?.get(i)
+                item?.let { team ->
+                    ShowTeamList(team) {
+                        onItemClick.invoke(team.id)
+                    }
                 }
             }
         }
-    }
+
+
+
 }

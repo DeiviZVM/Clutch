@@ -1,5 +1,6 @@
 package com.android.clutch.presentation.home.mapsList
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -18,6 +19,7 @@ import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -36,6 +38,7 @@ fun ShowMapList(
     map: MapModel
 ){
     Surface(
+        border = BorderStroke(2.dp, Color.LightGray),
         shape = MaterialTheme.shapes.small,
     ) {
         Row(

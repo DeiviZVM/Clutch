@@ -18,7 +18,7 @@ sealed class BottomBarScreen(
 
     object Teams: BottomBarScreen(
         route = "teams",
-        title = "teams",
+        title = "Teams",
         icon = Icons.Default.Menu
     )
 }
