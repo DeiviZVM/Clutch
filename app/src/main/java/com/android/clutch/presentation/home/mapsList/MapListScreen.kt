@@ -47,7 +47,7 @@ fun MapListScreen(
         columns = GridCells.Fixed(2),
         contentPadding = PaddingValues(horizontal = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
-        verticalArrangement = Arrangement.spacedBy(28.dp),
+        verticalArrangement = Arrangement.spacedBy(18.dp),
         modifier = Modifier.fillMaxWidth()
     ) {
         val mapList = state.value

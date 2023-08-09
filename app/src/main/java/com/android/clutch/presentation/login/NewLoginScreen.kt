@@ -22,7 +22,13 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.MailOutline
+import androidx.compose.material.icons.filled.RadioButtonUnchecked
+import androidx.compose.material.icons.filled.RemoveRedEye
 import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Fingerprint
+import androidx.compose.material.icons.outlined.RemoveRedEye
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -108,19 +114,12 @@ fun NewLoginScreen() {
                             ),
                         )
 
-                        Text(
-                            text = "Inicie sesión",
-                            style = MaterialTheme.typography.titleLarge.copy(
-                                fontWeight = FontWeight.Medium
-                            )
-                        )
-
                         Column(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .padding(horizontal = 16.dp),
                             horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.spacedBy(8.dp)
+                            verticalArrangement = Arrangement.spacedBy(18.dp)
                         ) {
                             CustomTextField(
                                 textFieldValue = mailValue,
@@ -154,9 +153,9 @@ fun NewLoginScreen() {
                                     ) {
                                         Icon(
                                             imageVector = if(passVisibility) {
-                                                Icons.Default.Star
+                                                Icons.Filled.RemoveRedEye
                                             }else{
-                                                Icons.Default.ArrowForward
+                                                Icons.Outlined.RemoveRedEye
                                             },
                                             contentDescription = "Mostrar contraseña"
                                         )
@@ -176,6 +175,14 @@ fun NewLoginScreen() {
                                 textAlign = TextAlign.End
 
                             )
+
+                            Icon(
+                                modifier = Modifier.size(62.dp),
+                                imageVector = Icons.Outlined.Fingerprint,
+                                contentDescription = "Biometric icon",
+                                tint = Color.Black
+                            )
+
                         }
 
                         Column(
