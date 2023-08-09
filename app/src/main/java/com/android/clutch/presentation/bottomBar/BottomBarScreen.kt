@@ -1,8 +1,10 @@
 package com.android.clutch.presentation.bottomBar
 
+import android.graphics.drawable.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.Remove
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class BottomBarScreen(

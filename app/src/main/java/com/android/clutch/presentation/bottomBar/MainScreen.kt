@@ -22,6 +22,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.android.clutch.R
+import com.android.clutch.navigation.Screen
 import com.android.clutch.presentation.theme.ValRed
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -39,7 +40,7 @@ fun MainScreen() {
 fun BottomBar(navController: NavHostController) {
     val screens = listOf(
         BottomBarScreen.Home,
-        BottomBarScreen.Teams
+        BottomBarScreen.Teams,
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()

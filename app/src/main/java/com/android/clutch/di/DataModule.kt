@@ -9,6 +9,7 @@ import com.android.clutch.data.local.AgentDao
 import com.android.clutch.data.local.AgentDatabase
 import com.android.clutch.data.local.LocalDataSource
 import com.android.clutch.data.local.LocalDataSourceImpl
+import com.android.clutch.data.local.TeamDao
 import com.android.clutch.data.remote.RemoteDataSource
 import com.android.clutch.data.remote.RemoteDataSourceImpl
 import com.android.clutch.data.remote.ValorantApi
@@ -49,7 +50,7 @@ val dataModule = module {
 
     single<RemoteDataSource> { RemoteDataSourceImpl(get()) }
 
-    single<LocalDataSource> { LocalDataSourceImpl(get()) }
+    single<LocalDataSource> { LocalDataSourceImpl(get(), get()) }
 
     single<ValorantApi> {
         getValorantApi(get())
@@ -62,6 +63,10 @@ val dataModule = module {
     single {
         providesAgentDao(get())
     }
+
+    single {
+        providesTeamDao(get())
+    }
 }
 
 private fun getValorantApi(retrofit: Retrofit) = retrofit.create(ValorantApi::class.java)
@@ -72,3 +77,5 @@ private fun getDataBase(context: Context): AgentDatabase = Room.databaseBuilder(
 ).build()
 
 private fun providesAgentDao(db: AgentDatabase): AgentDao = db.getAgentDao()
+
+private fun providesTeamDao(db: AgentDatabase): TeamDao = db.getTeamDao()

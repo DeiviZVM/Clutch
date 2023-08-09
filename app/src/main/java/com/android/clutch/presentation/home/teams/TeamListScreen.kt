@@ -40,6 +40,8 @@ fun TeamListScreen(
         ShowError(error = error ?: "")
     }
 
+        //TODO - Arreglar titulo que aparece debajo del listado
+
         Text(
             text = "Equipos".uppercase(),
             style = MaterialTheme.typography.h5,

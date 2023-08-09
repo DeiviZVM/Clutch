@@ -31,12 +31,15 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.android.clutch.R
 import com.android.clutch.domain.model.AgentModel
+import com.android.clutch.domain.model.TeamModel
 import kotlinx.coroutines.job
 
 val requester = FocusRequester()
 
 @Composable
-fun ShowAgentDetail(agent: AgentModel) {
+fun ShowTeamDetail(
+    team: TeamModel
+) {
 
     var starred by remember {
         mutableStateOf(false)
@@ -57,9 +60,9 @@ fun ShowAgentDetail(agent: AgentModel) {
             placeholder = painterResource(id = R.drawable.agent_killjoy),
             error = painterResource(id = R.drawable.agent_killjoy),
             model = ImageRequest.Builder(LocalContext.current)
-                .data(agent.portraitUrl)
+                .data(team.imageUrl)
                 .build(),
-            contentDescription = "Personaje ${agent.name} Imagen"
+            contentDescription = "Personaje ${team.name} Imagen"
         )
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -70,7 +73,7 @@ fun ShowAgentDetail(agent: AgentModel) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = agent.name,
+                    text = team.name,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -82,11 +85,11 @@ fun ShowAgentDetail(agent: AgentModel) {
                 modifier = Modifier
                     .clearAndSetSemantics {
                         //.semantics {
-                        contentDescription = "Hacer ${agent.name} Favorito"
+                        contentDescription = "Hacer ${team.name} Favorito"
                         stateDescription = if (starred) {
-                            "${agent.name} marcado como Favorito"
+                            "${team.name} marcado como Favorito"
                         } else {
-                            "${agent.name} desmarcado como Favorito"
+                            "${team.name} desmarcado como Favorito"
                         }
                     },
                 checked = starred,

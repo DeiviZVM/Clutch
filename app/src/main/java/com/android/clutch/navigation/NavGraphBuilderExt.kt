@@ -5,7 +5,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.android.clutch.presentation.bottomBar.MainScreen
-import com.android.clutch.presentation.home.detail.AgentDetailScreen
+import com.android.clutch.presentation.home.detail.TeamDetailScreen
 import com.android.clutch.presentation.login.LoginScreen
 import com.android.clutch.presentation.login.NewLoginScreen
 
@@ -32,13 +32,13 @@ fun NavGraphBuilder.addNewLoginScreen(navController: NavController) {
     }
 }
 
-fun NavGraphBuilder.addAgentDetailScreen(navController: NavHostController) {
+fun NavGraphBuilder.addTeamDetailScreen(navController: NavHostController) {
     composable(
-        route = Screen.AgentDetailScreen.route + "/{agentId}",
-        arguments = Screen.AgentDetailScreen.arguments
+        route = Screen.TeamDetailScreen.route + "/{teamId}",
+        arguments = Screen.TeamDetailScreen.arguments
     ) { navBackStackEntry ->
-        val id = navBackStackEntry.arguments?.getString("agentId") ?: ""
-        AgentDetailScreen(id = id) {
+        val id = navBackStackEntry.arguments?.getInt("teamId") ?: 0
+        TeamDetailScreen(id = id) {
             navController.popBackStack()
         }
     }

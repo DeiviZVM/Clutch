@@ -6,14 +6,17 @@ import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.android.clutch.data.local.model.AgentLocal
 import com.android.clutch.data.local.model.TeamLocal
-import com.android.clutch.domain.model.AgentModel
 
 @Dao
-interface AgentDao {
+interface TeamDao {
 
-    @Query("SELECT * FROM AgentTable")
-    suspend fun getAll(): List<AgentLocal>
+    @Query("SELECT * FROM TeamTable")
+    suspend fun getAllTeams(): List<TeamLocal>
+
+    @Query("SELECT * FROM TeamTable WHERE id=:id")
+    suspend fun getTeamById(id: Int) : TeamLocal
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(list: List<AgentLocal>)
+    suspend fun insertAll(list: List<TeamLocal>)
+
 }

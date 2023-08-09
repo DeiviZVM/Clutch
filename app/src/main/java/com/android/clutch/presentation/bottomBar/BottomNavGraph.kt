@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.android.clutch.presentation.home.HomeScreen
+import com.android.clutch.presentation.home.detail.TeamDetailScreen
 import com.android.clutch.presentation.home.teams.TeamListScreen
 
 @Composable
@@ -18,7 +19,7 @@ fun BottomNavGraph(navController: NavHostController){
         }
         composable(route = BottomBarScreen.Teams.route) {
             TeamListScreen() { teamId ->
-
+                //TODO - Mostrar el detail del team
             }
         }
     }

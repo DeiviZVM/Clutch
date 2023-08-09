@@ -14,7 +14,7 @@ fun NavigationGraph() {
     ) {
         addNewLoginScreen(navController)
         addMainScreen()
-        addAgentDetailScreen(navController)
+        addTeamDetailScreen(navController)
         addLoginScreen(navController)
     }
 }

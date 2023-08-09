@@ -8,5 +8,5 @@ data class TeamModel (
     val imageUrl: String,
     val location: String,
     val name: String,
-    val players: List<PlayerDto>
+    //val players: List<PlayerDto>
 )

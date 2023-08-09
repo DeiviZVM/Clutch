@@ -23,11 +23,11 @@ sealed class Screen(
         arguments = emptyList()
     )
 
-    object AgentDetailScreen : Screen(
-        route = "agentDetail",
+    object TeamDetailScreen : Screen(
+        route = "teamDetail",
         arguments = listOf(
-            navArgument("agentId") {
-                type = NavType.StringType
+            navArgument("teamId") {
+                type = NavType.IntType
                 nullable = false
             }
         )

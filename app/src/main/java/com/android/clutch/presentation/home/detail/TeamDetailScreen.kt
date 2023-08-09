@@ -1,6 +1,7 @@
 package com.android.clutch.presentation.home.detail
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
@@ -18,30 +19,32 @@ import org.koin.androidx.compose.koinViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun AgentDetailScreen(
-    id: String,
-    agentDetailViewModel: DetailViewModel = koinViewModel(),
+fun TeamDetailScreen(
+    id: Int,
+    teamDetailViewModel: DetailViewModel = koinViewModel(),
     onBack: () -> Unit
 ){
 
-    val agentState = agentDetailViewModel.agent.observeAsState()
-    val errorState = agentDetailViewModel.errorMessage.observeAsState()
+    Log.d("DETAIL", id.toString())
 
-    agentDetailViewModel.getAgent(id)
+    val teamState = teamDetailViewModel.team.observeAsState()
+    val errorState = teamDetailViewModel.errorMessage.observeAsState()
+
+    teamDetailViewModel.getTeam(id)
 
     if (errorState.value?.isNotEmpty() == true) {
         val error = errorState.value
         ShowError(error = error ?: "")
     }
 
-    val result = agentState.value
+    val result = teamState.value
 
-    result?.let { agent ->
+    result?.let { team ->
         Scaffold(
             topBar = {
                 TopAppBar(
                     title = {
-                        Text("Detalle de ${ agent.name }")
+                        Text("Detalle de ${ team.name }")
                     },
                     navigationIcon = {
                         IconButton(
@@ -56,7 +59,7 @@ fun AgentDetailScreen(
                 )
             }
         ) {
-            ShowAgentDetail(agent = agent)
+            ShowTeamDetail(team = team)
         }
     } ?: run {
         ShowError("Unknown error")

@@ -8,5 +8,5 @@ class GetDetailUseCase(
     private val valorantRepository: ValorantRepository
 ){
     //TODO repository -> Team de la Base de Datos por Id
-    //suspend fun invoke(id: String): TeamModel = valorantRepository.getTeamList(id)
+    suspend fun invoke(id: Int): TeamModel = valorantRepository.getTeamById(id)
 }

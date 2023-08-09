@@ -66,12 +66,12 @@ import com.android.clutch.R
 import com.android.clutch.presentation.components.CustomButtom
 import com.android.clutch.presentation.components.CustomTextField
 
-private lateinit var prompt: androidx.biometric.BiometricPrompt.PromptInfo
-
 @Composable
 fun NewLoginScreen(
     onLoginSuccess: () -> Unit
 ) {
+
+    //TODO - Terminar Login
 
     val mailValue = rememberSaveable { mutableStateOf("david@gmail.com") }
     val passValue = rememberSaveable { mutableStateOf("password") }
@@ -100,7 +100,7 @@ fun NewLoginScreen(
                 Surface(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(480.dp)
+                        .height(420.dp)
                         .constrainAs(surface) {
                             bottom.linkTo(parent.bottom)
                         },
@@ -114,7 +114,7 @@ fun NewLoginScreen(
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(16.dp),
+                            .padding(20.dp, 0.dp, 20.dp, 0.dp),
                         verticalArrangement = Arrangement.SpaceEvenly,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
@@ -163,16 +163,16 @@ fun NewLoginScreen(
                                         }
                                     ) {
                                         Icon(
-                                            imageVector = if(passVisibility) {
+                                            imageVector = if (passVisibility) {
                                                 Icons.Filled.RemoveRedEye
-                                            }else{
+                                            } else {
                                                 Icons.Outlined.RemoveRedEye
                                             },
                                             contentDescription = "Mostrar contraseña"
                                         )
                                     }
                                 },
-                                visualTransformation = if(passVisibility){
+                                visualTransformation = if (passVisibility) {
                                     VisualTransformation.None
                                 } else {
                                     PasswordVisualTransformation()
@@ -210,35 +210,16 @@ fun NewLoginScreen(
                                         style = SpanStyle(
                                             fontWeight = FontWeight.Bold
                                         )
-                                    ){
+                                    ) {
                                         append("Registrarse")
                                     }
                                 }
-                            ){
+                            ) {
                                 //TODO REGISTER
                             }
                         }
                     }
 
-                }
-
-                FloatingActionButton(
-                    modifier = Modifier
-                        .size(72.dp)
-                        .constrainAs(fab) {
-                            top.linkTo(surface.top, margin = (-36).dp)
-                            end.linkTo(surface.end, margin = 36.dp)
-                        },
-                    contentColor = Color.White,
-                    containerColor = Color(0xFFF84F4F),
-                    onClick = { /*TODO*/ }
-                ) {
-                    Icon(
-                        modifier = Modifier.size(42.dp),
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = "Forward Icon",
-                        tint = Color.White
-                    )
                 }
             }
         }
