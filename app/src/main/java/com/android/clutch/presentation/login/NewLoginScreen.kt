@@ -1,8 +1,13 @@
 package com.android.clutch.presentation.login
 
+import android.content.Context
 import android.graphics.Paint.Align
+import android.hardware.biometrics.BiometricManager
+import android.hardware.biometrics.BiometricPrompt
+import android.view.View
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -39,7 +44,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -59,11 +66,15 @@ import com.android.clutch.R
 import com.android.clutch.presentation.components.CustomButtom
 import com.android.clutch.presentation.components.CustomTextField
 
-@Composable
-fun NewLoginScreen() {
+private lateinit var prompt: androidx.biometric.BiometricPrompt.PromptInfo
 
-    val mailValue = rememberSaveable { mutableStateOf("") }
-    val passValue = rememberSaveable { mutableStateOf("") }
+@Composable
+fun NewLoginScreen(
+    onLoginSuccess: () -> Unit
+) {
+
+    val mailValue = rememberSaveable { mutableStateOf("david@gmail.com") }
+    val passValue = rememberSaveable { mutableStateOf("password") }
     var passVisibility by remember { mutableStateOf(false) }
     val focusManager = LocalFocusManager.current
 
@@ -176,31 +187,24 @@ fun NewLoginScreen() {
 
                             )
 
-                            Icon(
-                                modifier = Modifier.size(62.dp),
-                                imageVector = Icons.Outlined.Fingerprint,
-                                contentDescription = "Biometric icon",
-                                tint = Color.Black
-                            )
-
                         }
 
                         Column(
                             modifier = Modifier.fillMaxWidth(),
                             horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.spacedBy(8.dp)
-                            ) {
+                        ) {
                             CustomButtom(
                                 text = "Iniciar sesión",
                                 displayProgressBar = false,
                                 onClick = {
-                                    //TODO LOGIN
+                                    onLoginSuccess()
                                 }
                             )
 
                             ClickableText(
                                 text = buildAnnotatedString {
-                                       append("¿No tienes cuenta?")
+                                    append("¿No tienes cuenta?")
 
                                     withStyle(
                                         style = SpanStyle(
@@ -241,8 +245,16 @@ fun NewLoginScreen() {
     }
 }
 
+fun authenticate(user: String, password: String) =
+    user == "david@gmail.com" && password == "pass"
+
+
 @Composable
 @Preview
 fun NewLoginScreenPreview() {
-    NewLoginScreen()
+    NewLoginScreen(
+        onLoginSuccess = {
+
+        }
+    )
 }

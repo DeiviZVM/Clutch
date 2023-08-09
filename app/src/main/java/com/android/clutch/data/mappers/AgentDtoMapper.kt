@@ -13,7 +13,7 @@ fun AgentDto.toAgentModel() = AgentModel(
 fun AgentDto.toAgentLocal() = AgentLocal(
     id = id ?: 0,
     name = name ?: "",
-    portraitUrl = portraitUrl ?: ""
+    portraitUrl = portraitUrl ?: "",
 )
 
 fun AgentLocal.toAgentModel() = AgentModel(

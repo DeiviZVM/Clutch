@@ -158,7 +158,7 @@ fun LoginScreen(
     }
 }
 
-fun authenticate(user: String, password: String) =
+fun authenticateOld(user: String, password: String) =
     user == "david@gmail.com" && password == "pass"
 
 

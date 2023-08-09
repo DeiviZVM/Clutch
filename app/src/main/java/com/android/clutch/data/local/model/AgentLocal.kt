@@ -8,6 +8,5 @@ import androidx.room.PrimaryKey
 data class AgentLocal(
     @PrimaryKey @ColumnInfo(name = "id") val id: Int,
     @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "portrait_url") val portraitUrl: String,
-
+    @ColumnInfo(name = "portraitUrl") val portraitUrl: String,
 )

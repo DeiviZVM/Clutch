@@ -6,5 +6,6 @@ import com.android.clutch.domain.model.MapModel
 interface AgentRepository {
 
     suspend fun getAgentList(): List<AgentModel>
+    suspend fun getAgentById(id: String) : AgentModel
     suspend fun getMapList(): List<MapModel>
 }

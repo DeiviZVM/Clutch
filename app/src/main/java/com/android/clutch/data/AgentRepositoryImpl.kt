@@ -32,4 +32,12 @@ class AgentRepositoryImpl (
 
     override suspend fun getMapList(): List<MapModel> =
         remoteDataSource.getMapsList().map { it.toMapModel() }
+
+
+    override suspend fun getAgentById(id: String): AgentModel =
+        localDataSource.getAgentById(id)
+
     }
+
+
+

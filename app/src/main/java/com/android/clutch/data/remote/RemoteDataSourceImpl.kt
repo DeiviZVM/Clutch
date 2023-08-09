@@ -2,6 +2,7 @@ package com.android.clutch.data.remote
 
 import com.android.clutch.data.remote.dto.AgentDto
 import com.android.clutch.data.remote.dto.MapDto
+import com.android.clutch.data.remote.dto.SearchDto
 
 class RemoteDataSourceImpl(
     private val valorantApi: ValorantApi

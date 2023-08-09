@@ -4,8 +4,11 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -17,6 +20,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,18 +32,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.android.clutch.AgentTestDataBuilder
 import com.android.clutch.R
+import com.android.clutch.components.FavoriteComponent
 import com.android.clutch.domain.model.AgentModel
 import com.android.clutch.presentation.theme.backgroundColor
 
 @Composable
 fun ShowAgentList(
     agent: AgentModel,
-    onclick: () -> Unit
+    onClick: () -> Unit
 ) {
+
+    var starred by rememberSaveable {
+        mutableStateOf(false)
+    }
 
     Surface(
         shape = MaterialTheme.shapes.small,
@@ -47,6 +57,24 @@ fun ShowAgentList(
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
+
+            AndroidView(
+                modifier = Modifier
+                    .align(Alignment.End)
+                    .clickable {
+                        val newState = !starred
+                        starred = newState
+                    },
+                factory = { context ->
+                    FavoriteComponent(context).apply {
+                        this.checked = starred
+                    }
+                },
+                update = {
+                    it.checked = starred
+                }
+            )
+
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
                     .data(agent.portraitUrl)
@@ -57,7 +85,8 @@ fun ShowAgentList(
                 error = painterResource(id = R.drawable.agent_killjoy),
                 modifier = Modifier
                     .size(88.dp)
-                    .clip(CircleShape).background(Color.LightGray),
+                    .clip(CircleShape)
+                    .background(Color.LightGray),
 
                 )
             Text(
