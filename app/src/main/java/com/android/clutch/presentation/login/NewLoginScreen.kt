@@ -182,15 +182,6 @@ fun NewLoginScreen(
                                     PasswordVisualTransformation()
                                 }
                             )
-
-                            Text(
-                                modifier = Modifier.fillMaxWidth(),
-                                text = "He olvidado la contraseña",
-                                style = MaterialTheme.typography.bodySmall,
-                                textAlign = TextAlign.End
-
-                            )
-
                         }
 
                         Column(
@@ -224,7 +215,5 @@ fun NewLoginScreen(
     }
 }
 
-//TODO - Cambiar para que admita correos con @gmail.com y pareceidos no uno solo
 fun authenticate(user: String, password: String) =
-    (user == "david@gmail.com" && password == "password"
-            || user == "miguel@gmail.com" && password == "password")
+    (user.contains("@gmail.com") && password == "password")

@@ -1,4 +1,4 @@
-package com.android.clutch.presentation.home.detail
+package com.android.clutch.presentation.home.teamDetail
 
 import android.annotation.SuppressLint
 import android.util.Log
@@ -12,6 +12,7 @@ import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.semantics
 import com.android.clutch.components.ShowError
@@ -43,17 +44,20 @@ fun TeamDetailScreen(
         Scaffold(
             topBar = {
                 TopAppBar(
+                    backgroundColor = Color(0xFFF84F4F),
                     title = {
-                        Text("Detalle de ${ team.name }")
+                        Text(text = "Detalle de ${ team.name }", color = Color.White)
                     },
                     navigationIcon = {
                         IconButton(
                             modifier = Modifier.semantics {
-                                contentDescription = "Atrás Botón Ir al listado de personajes"
+                                contentDescription = "Ir al listado de equipos"
                             },
                             onClick = onBack
                         ) {
-                            Icon(Icons.Filled.ArrowBack, null)
+                            Icon(Icons.Filled.ArrowBack,
+                                contentDescription = null,
+                                tint = Color.White)
                         }
                     }
                 )

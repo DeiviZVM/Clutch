@@ -1,10 +1,9 @@
-package com.android.clutch.presentation.home.detail
+package com.android.clutch.presentation.home.teamDetail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.android.clutch.domain.model.AgentModel
 import com.android.clutch.domain.model.TeamModel
 import com.android.clutch.domain.usecase.GetDetailUseCase
 import kotlinx.coroutines.Dispatchers

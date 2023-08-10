@@ -1,4 +1,4 @@
-package com.android.clutch.nav
+package com.android.clutch.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder

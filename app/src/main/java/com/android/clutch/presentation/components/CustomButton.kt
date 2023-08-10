@@ -1,10 +1,12 @@
 package com.android.clutch.presentation.components
 
+import android.graphics.ColorSpace
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -23,7 +25,10 @@ fun CustomButtom(
 ) {
     if(!displayProgressBar) {
         Button(
-            modifier = modifier.width(280.dp).height(50.dp),
+            colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF84F4F)) ,
+            modifier = modifier
+                .width(280.dp)
+                .height(50.dp),
             onClick = onClick,
             shape = RoundedCornerShape(50),
         ) {

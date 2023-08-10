@@ -1,4 +1,4 @@
-package com.android.clutch.nav
+package com.android.clutch.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NamedNavArgument
@@ -11,7 +11,7 @@ import androidx.navigation.navArgument
 import androidx.navigation.navigation
 import com.android.clutch.presentation.bottomBar.BottomBarScreen
 import com.android.clutch.presentation.home.HomeScreen
-import com.android.clutch.presentation.home.detail.TeamDetailScreen
+import com.android.clutch.presentation.home.teamDetail.TeamDetailScreen
 import com.android.clutch.presentation.home.teams.TeamListScreen
 
 @Composable

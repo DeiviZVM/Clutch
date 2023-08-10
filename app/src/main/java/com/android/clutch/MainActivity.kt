@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.navigation.compose.rememberNavController
-import com.android.clutch.nav.RootNavigationGraph
+import com.android.clutch.navigation.RootNavigationGraph
 import com.android.clutch.presentation.theme.ClutchTheme
 
 class MainActivity : ComponentActivity() {

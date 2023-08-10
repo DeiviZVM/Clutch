@@ -1,11 +1,10 @@
-package com.android.clutch.nav
+package com.android.clutch.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.android.clutch.presentation.bottomBar.NavScreen
-import com.android.clutch.presentation.home.HomeScreen
 
 @Composable
 fun RootNavigationGraph(navHostController: NavHostController) {

@@ -1,13 +1,9 @@
 package com.android.clutch.di
 
-import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.clutch.presentation.home.agentsList.AgentListViewModel
-import com.android.clutch.presentation.home.detail.DetailViewModel
-import com.android.clutch.presentation.home.detail.TeamDetailScreen
+import com.android.clutch.presentation.home.teamDetail.DetailViewModel
 import com.android.clutch.presentation.home.mapsList.MapListViewModel
-import com.android.clutch.presentation.home.teams.TeamListScreen
 import com.android.clutch.presentation.home.teams.TeamListViewModel
-import org.koin.androidx.compose.get
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 

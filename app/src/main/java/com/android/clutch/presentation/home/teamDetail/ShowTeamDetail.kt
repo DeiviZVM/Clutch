@@ -1,4 +1,4 @@
-package com.android.clutch.presentation.home.detail
+package com.android.clutch.presentation.home.teamDetail
 
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Column
@@ -30,7 +30,6 @@ import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.android.clutch.R
-import com.android.clutch.domain.model.AgentModel
 import com.android.clutch.domain.model.TeamModel
 import kotlinx.coroutines.job
 
