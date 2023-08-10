@@ -228,14 +228,3 @@ fun NewLoginScreen(
 fun authenticate(user: String, password: String) =
     (user == "david@gmail.com" && password == "password"
             || user == "miguel@gmail.com" && password == "password")
-
-
-@Composable
-@Preview
-fun NewLoginScreenPreview() {
-    NewLoginScreen(
-        onLoginSuccess = {
-
-        }
-    )
-}

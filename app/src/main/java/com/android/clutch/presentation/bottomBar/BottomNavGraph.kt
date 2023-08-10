@@ -26,7 +26,7 @@ fun BottomNavGraph(navController: NavHostController){
         }
 
         composable(route = BottomBarScreen.Teams.route) {
-            TeamListScreen { teamId ->
+            TeamListScreen {
 
             }
         }
