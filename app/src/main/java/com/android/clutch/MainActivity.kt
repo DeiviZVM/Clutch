@@ -5,7 +5,9 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.android.clutch.navigation.NavRootController
 import com.android.clutch.navigation.NavigationGraph
 import com.android.clutch.presentation.theme.ClutchTheme
 

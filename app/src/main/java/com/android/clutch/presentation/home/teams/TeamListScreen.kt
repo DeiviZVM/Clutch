@@ -29,12 +29,10 @@ fun TeamListScreen(
         ShowError(error = error ?: "")
     }
 
-    //TODO - Arreglar titulo que aparece debajo del listado
-
     Column(modifier = Modifier.fillMaxHeight()) {
 
         LazyColumn(
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 20.dp),
+            contentPadding = PaddingValues(16.dp, 24.dp, 16.dp, 70.dp),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
 

@@ -23,6 +23,11 @@ sealed class Screen(
         arguments = emptyList()
     )
 
+    object TeamListScreen: Screen(
+        route = "teamList",
+        arguments = emptyList()
+    )
+
     object TeamDetailScreen : Screen(
         route = "teamDetail",
         arguments = listOf(

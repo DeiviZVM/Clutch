@@ -2,6 +2,8 @@ package com.android.clutch.di
 
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.android.clutch.presentation.home.agentsList.AgentListViewModel
+import com.android.clutch.presentation.home.detail.DetailViewModel
+import com.android.clutch.presentation.home.detail.TeamDetailScreen
 import com.android.clutch.presentation.home.mapsList.MapListViewModel
 import com.android.clutch.presentation.home.teams.TeamListScreen
 import com.android.clutch.presentation.home.teams.TeamListViewModel
@@ -13,4 +15,5 @@ val presentationModule = module {
     viewModel { AgentListViewModel(get()) }
     viewModel { MapListViewModel(get()) }
     viewModel { TeamListViewModel(get())}
+    viewModel { DetailViewModel(get()) }
 }

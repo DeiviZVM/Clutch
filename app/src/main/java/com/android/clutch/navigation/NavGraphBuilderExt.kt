@@ -5,7 +5,10 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.android.clutch.presentation.bottomBar.MainScreen
+import com.android.clutch.presentation.home.BottomBarScreen
+import com.android.clutch.presentation.home.HomeScreen
 import com.android.clutch.presentation.home.detail.TeamDetailScreen
+import com.android.clutch.presentation.home.teams.TeamListScreen
 import com.android.clutch.presentation.login.NewLoginScreen
 
 fun NavGraphBuilder.addNewLoginScreen(navController: NavController) {
