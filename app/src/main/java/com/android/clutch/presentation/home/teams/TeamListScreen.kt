@@ -3,6 +3,7 @@ package com.android.clutch.presentation.home.teams
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -40,14 +41,16 @@ fun TeamListScreen(
         ShowError(error = error ?: "")
     }
 
-        //TODO - Arreglar titulo que aparece debajo del listado
+    //TODO - Arreglar titulo que aparece debajo del listado
 
-        Text(
-            text = "Equipos".uppercase(),
-            style = MaterialTheme.typography.h5,
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-        )
+    Text(
+        text = "Equipos".uppercase(),
+        style = MaterialTheme.typography.h5,
+        modifier = Modifier
+            .padding(horizontal = 16.dp)
+    )
+
+    Column(modifier = Modifier.fillMaxHeight()) {
 
         LazyColumn(
             contentPadding = PaddingValues(horizontal = 16.dp, vertical = 70.dp),
@@ -63,7 +66,7 @@ fun TeamListScreen(
                 }
             }
         }
-
+    }
 
 
 }

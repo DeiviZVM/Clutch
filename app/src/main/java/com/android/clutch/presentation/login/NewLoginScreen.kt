@@ -5,6 +5,7 @@ import android.graphics.Paint.Align
 import android.hardware.biometrics.BiometricManager
 import android.hardware.biometrics.BiometricPrompt
 import android.view.View
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -65,14 +66,17 @@ import androidx.core.view.ViewCompat.FocusDirection
 import com.android.clutch.R
 import com.android.clutch.presentation.components.CustomButtom
 import com.android.clutch.presentation.components.CustomTextField
+import com.android.clutch.presentation.components.PreferencesManager
+
 
 @Composable
 fun NewLoginScreen(
     onLoginSuccess: () -> Unit
 ) {
 
-    //TODO - Terminar Login
+    val context = LocalContext.current
 
+    val preferencesManager = remember { PreferencesManager(context) }
     val mailValue = rememberSaveable { mutableStateOf("david@gmail.com") }
     val passValue = rememberSaveable { mutableStateOf("password") }
     var passVisibility by remember { mutableStateOf(false) }
@@ -198,25 +202,19 @@ fun NewLoginScreen(
                                 text = "Iniciar sesión",
                                 displayProgressBar = false,
                                 onClick = {
-                                    onLoginSuccess()
-                                }
-                            )
+                                    if (authenticate(mailValue.value, passValue.value)) {
+                                        preferencesManager.saveData("user_name",
+                                            mailValue.value.substring(0, mailValue.value.indexOf("@")))
+                                        onLoginSuccess()
 
-                            ClickableText(
-                                text = buildAnnotatedString {
-                                    append("¿No tienes cuenta?")
-
-                                    withStyle(
-                                        style = SpanStyle(
-                                            fontWeight = FontWeight.Bold
-                                        )
-                                    ) {
-                                        append("Registrarse")
+                                    } else {
+                                        Toast.makeText(context,
+                                            "Los datos de inicio de sesión no son correctos",
+                                            Toast.LENGTH_SHORT)
+                                            .show()
                                     }
                                 }
-                            ) {
-                                //TODO REGISTER
-                            }
+                            )
                         }
                     }
 
@@ -226,8 +224,10 @@ fun NewLoginScreen(
     }
 }
 
+//TODO - Cambiar para que admita correos con @gmail.com y pareceidos no uno solo
 fun authenticate(user: String, password: String) =
-    user == "david@gmail.com" && password == "pass"
+    (user == "david@gmail.com" && password == "password"
+            || user == "miguel@gmail.com" && password == "password")
 
 
 @Composable

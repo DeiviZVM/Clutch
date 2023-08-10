@@ -10,11 +10,11 @@ fun NavigationGraph() {
 
     NavHost( // FragmentContainerView
         navController = navController,
+        route = Graph.Main,
         startDestination = Screen.NewLoginScreen.route ,
     ) {
         addNewLoginScreen(navController)
         addMainScreen()
         addTeamDetailScreen(navController)
-        addLoginScreen(navController)
     }
 }
