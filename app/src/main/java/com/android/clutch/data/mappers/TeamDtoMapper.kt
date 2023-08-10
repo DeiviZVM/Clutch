@@ -1,10 +1,7 @@
 package com.android.clutch.data.mappers
 
-import com.android.clutch.data.local.model.AgentLocal
 import com.android.clutch.data.local.model.TeamLocal
-import com.android.clutch.data.remote.dto.AgentDto
 import com.android.clutch.data.remote.dto.TeamDto
-import com.android.clutch.domain.model.AgentModel
 import com.android.clutch.domain.model.TeamModel
 
 fun TeamDto.toTeamModel() = TeamModel(
