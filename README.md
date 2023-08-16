@@ -22,7 +22,7 @@ El proyecto sigue una estructura basada en Clean Architecture, lo que significa 
 
 - **presentation:** Capa que se encarga de la interfaz de usuario y presentacion. Aquí se encuentra la implementación de la arquitectura MVVM, donde los ViewModels se comunican con los casos de uso en la capa de domain.
 - **domain:** Capa que contiene la lógica de negocio de la aplicación. Aquí se definen los casos de uso y los modelos del dominio.
-- ** di: ** Aquí se encuentra la configuración de la inyección de dependencias utilizando Koin. Se definen los módulos para crear y proporcionar las instancias necesarias para toda la aplicación.
+- **di:** Aquí se encuentra la configuración de la inyección de dependencias utilizando Koin. Se definen los módulos para crear y proporcionar las instancias necesarias para toda la aplicación.
 - **data:** En esta capa se maneja la obtención y almacenamiento de datos. Se utilizan fuentes de datos como la red (Retrofit) y la base de datos local (Room). Los repositorios implementan el patrón repositorio para proporcionar una interfaz única para acceder a los datos.
 - **components:** En esta capa se encuentran los componentes reutilizables de la aplicación. Pueden incluir vistas personalizadas, extensiones de funciones clases de utilidad y más. Estos componentes contribuyen a una mayor modularidad y mantenibilidad.
 - **navigation:** Esta capa se encarga de la navegación entre destinos en la aplicación. Aquí se definen los gráficos de navegación, fragmentos y acciones para guiar al usuario a través de la interfaz de usuario.
